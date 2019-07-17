@@ -12,22 +12,21 @@ function findOrAdd(rootNode, newNode){
     if(currentNode.data == newNode.data){
     return true
   }
-  let currentNode = rootNode
-  if(newNode.data < rootNode.data){
-      currentNode = rootNode.left
-      if(currentNode){
-        findOrAdd(currentNode, newNode)
-      } else {
-        rootNode.left = newNode
-      }
-  } else if(newNode.data > rootNode.data) {
-    currentNode = rootNode.right
-    if(currentNode){
-      findOrAdd(currentNode, newNode)
+   if(newNode.data < currentNode.data){
+    if(currentNode.left){
+      return findOrAdd(currentNode.left, newNode)
     } else {
-      rootNode.right = newNode
+      return currentNode.left = newNode
     }
-  } 
+  }
+
+  if(newNode.data > currentNode.data){
+    if(currentNode.right){
+      return findOrAdd(currentNode.right, newNode)
+    } else {
+      return currentNode.right = newNode
+    }
+  }
 }
 
 function max(currentNode) {
