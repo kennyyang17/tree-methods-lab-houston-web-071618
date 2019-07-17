@@ -9,6 +9,9 @@ function inOrder(currentNode) {
 }
 
 function findOrAdd(rootNode, newNode){
+    if(currentNode.data == newNode.data){
+    return true
+  }
   let currentNode = rootNode
   if(newNode.data < rootNode.data){
       currentNode = rootNode.left
