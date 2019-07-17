@@ -26,25 +26,3 @@ function findOrAdd(rootNode, newNode){
     }
   } 
 }
-
-function inOrderArray(currentNode) {
-  let result = [];
-  if (currentNode.left) {
-    inOrder(currentNode.left)
-  }
-  result.push(currentNode.data)
-  if (currentNode.right) {
-    inOrder(currentNode.right)
-  }
-}
-
-function max(currentNode) {
-  let result = inOrderArray(currentNode);
-  return Math.max(...result)
-}
-
-function min(currentNode) {
-   let result = inOrderArray(currentNode);
-  return Math.min(...result)
-}
- 
